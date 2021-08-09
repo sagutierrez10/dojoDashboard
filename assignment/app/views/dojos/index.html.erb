@@ -1,4 +1,5 @@
-<h1> Listing 4 Dojos </h1>
+<h1> Listing Dojos </h1>
+<%= flash[:success] %>
 <table>
     <tr>
         <th>Coding Dojo Branch</th>
@@ -13,9 +14,9 @@
         <td> <%= dojo.street %> </td>
         <td> <%= dojo.city %> </td>
         <td> <%= dojo.satate %> </td>
-        <td> <a href="url"> Show</a> | <a href="url"> Edit </a> | <a href="url"> Destroy</a>
+        <td> <a href="/dojos/<%= dojo.id %>"> Show</a> | <a href="/dojos/<%= dojo.id %>/edit"> Edit </a> | <a href="/dojos/<%= dojo.id %>" data-method="delete"> Destroy</a>
     </tr>
     <% end %>    
 </table>
 <br><br>
-<a href="dojos/new"> New Dojo </a>
+<a href="/dojos/new"> New Dojo </a>

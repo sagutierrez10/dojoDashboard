@@ -1,0 +1,35 @@
+<style>
+div {
+    margin-bottom: 10px;
+}
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+</style>
+<h1> New Dojo </h1>
+<form action="/dojos/<%= @dojo.id %>" method="post">
+<input type="hidden" name="_method" value="patch">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div>
+        <label> Branch: </label>
+        <input type='text' name='dojo[branch]' value='<%= @dojo[:branch] %>'/>
+    </div>
+    <div>
+        <label> Street: </label>
+        <input type="text" name='dojo[street]' value='<%= @dojo[:street]%>'/>
+    </div>
+    <div>
+        <label> City: </label>
+        <input type="text" name='dojo[:city]'value='<%= @dojo[:city]%>'/>
+    </div>
+    <div>
+        <label> State: </label>
+        <input type='text' name='dojo[satate]' value='<%= @dojo[:satate]%>'/>
+    </div>
+    <br>
+    <input type='submit' value='update'/>
+</form>
+<br><br>
+<a href="/dojos"> Home </a> | <a href="/dojos/<%= @dojo.id %>"> Show</a>
